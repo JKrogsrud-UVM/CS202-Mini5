@@ -20,7 +20,7 @@ typedef struct {
  * if ids or records or names is NULL, then the function should return 1 and not allocate any memory.
  * Otherwise, it should create the array and return 0.
  *
- * if numRecords is 0, then the function should not allocate a new array but it shoukld return 0
+ * if numRecords is 0, then the function should not allocate a new array but it should return 0
  */
 int createRecords(unsigned int numRecords, int *ids, char **names, Record **records);
 

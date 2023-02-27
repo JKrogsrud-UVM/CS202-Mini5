@@ -17,14 +17,17 @@ int createRecords(unsigned int numRecords, int *ids, char **names, Record **reco
         return 0;
     }
 
-    // allocate memory to heap
-    *records = malloc(numRecords * sizeof (Record));
+    Record * rec_tmp = malloc(sizeof (Record) * numRecords);
 
-    for (int index = 0; index < numRecords; ++index)
+    for (int index = 0; index < numRecords; index++)
     {
-        records[index]->id = ids[index];
-        strcpy(names[index], records[index]->name);
+        Record *r = malloc(sizeof (Record));
+        r->id = ids[index];
+        strcpy(r->name, names[index]);
+        rec_tmp[index] = *r;
     }
+
+    *records = rec_tmp;
 
     return 0;
 }
